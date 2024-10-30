@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Cards</title>
+    <link rel="stylesheet" href="../src/event.css">
+</head>
+<body>
+    <h1>Upcoming Events in Seattle</h1>
+    
+    <!--filter section-->
+    <div class="filter-container">
+        <select id="category-select">
+            <option value="">All</option>
+            <option value="music">Music</option>
+            <option value="sports">Sports</option>
+            <option value="arts & theatre">Theater</option>
+        </select>
+        <button onclick="filterEvents()">Filter</button>
+    </div>
+    
+    <div id="events-container"></div>
+    <script src="../src/event.js"></script>
+</body>
+</html>
