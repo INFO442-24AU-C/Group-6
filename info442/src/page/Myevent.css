@@ -1,0 +1,87 @@
+
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+header, footer {
+    padding: 1em 0;
+    color: #fff;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../img/seattle.jpg);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1em;
+}
+
+.page-title {
+    font-size: 30px;
+    margin: 20px 0; 
+    color: white; 
+}
+
+nav input {
+    padding: 0.5em;
+    border: none;
+    border-radius: 5px;
+}
+
+.container {
+    display: flex;
+    flex-grow: 1;
+}
+
+aside {
+    width: 20%;
+    padding: 1em;
+    border-right: 1px solid #ccc;
+}
+
+main {
+    flex-grow: 1;
+    padding: 1em;
+}
+
+.welcome, .upcoming {
+    background-color: #ddd;
+    padding: 2em;
+    margin-bottom: 2em;
+    border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+    .container, header, nav, main, aside {
+        flex-direction: column;
+    }
+
+    nav, aside, main {
+        width: 100%;
+    }
+
+    nav input, .event {
+        width: 90%;
+    }
+}
+
+footer {
+    margin-top: auto;  
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
