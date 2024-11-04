@@ -9,6 +9,7 @@ function Navigation() {
         <Link to="/">Home</Link>
         <Link to="/myevent">MyEvent</Link>
         <Link to="/profile">Profile</Link>
+        <Link to="/login">Login</Link>
       </nav>
     </div>
   );
