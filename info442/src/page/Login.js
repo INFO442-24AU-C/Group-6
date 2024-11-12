@@ -1,4 +1,44 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import SignIn from '../components/Signin'; 
+import SignUp from '../components/Signup'; 
+
+const Login = () => {
+  const [isSigningUp, setIsSigningUp] = useState(false);
+
+  
+
+  const toggleSignInSignUp = () => {
+    setIsSigningUp(!isSigningUp);
+  };
+
+  return (
+    <div className="login-container">
+      {isSigningUp ? (
+        <>
+          <SignUp />
+          <p>
+            Already have an account?{' '}
+            <button onClick={toggleSignInSignUp}>Sign In</button>
+          </p>
+        </>
+      ) : (
+        <>
+          <SignIn />
+          <p>
+            Need an account?{' '}
+            <button onClick={toggleSignInSignUp}>Sign Up</button>
+          </p>
+        </>
+      )}
+    </div>
+  );
+};
+
+export default Login;
+
+
+
+/*import React, { useState, useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
 import { auth } from '../index';
 import { StyledFirebaseAuth } from 'react-firebaseui';
@@ -39,5 +79,5 @@ function Login(props) {
   );
 }
 
-export default Login;
+export default Login;*/
 

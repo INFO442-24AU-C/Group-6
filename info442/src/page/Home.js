@@ -1,33 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
+import Event from '../components/Event';
 
 function Home() {
     return (
         <div className="app-container">
             <header>
                 <nav>
-                <h1 className="page title">PNW Connects</h1>
+                    <h1 className="page-title">PNW Connects</h1>
                 </nav>
             </header>
             <main className="main">
-            <h1 className="main-title">PNW Connects</h1>
-                <section className="container">
-                    {['Music', 'Art', 'Party', 'Sports'].map((category) => (
-                        <div className="card">
-                            <div className="card-body">
-                                <h2 className="card-title m-0">{category}</h2>
-                            </div>
-                        </div>
-                    ))}
-                </section>
-
+                <h1 className="main-title">PNW Connects</h1>
+                <Event /> 
+                
                 <section className="container featured-event">
                     <div className="card">
                         <div className="card-body">
                             <h2 className="card-title m-0">Featured Event</h2>
-                            <a href="#" className="btn btn-dark">Event Details  </a>
-                            <a href="#" className="btn btn-dark">  RSVP Now</a>
+                            <a href="#" className="btn btn-dark">Event Details</a>
+                            <a href="#" className="btn btn-dark">RSVP Now</a>
                         </div>
                     </div>
                 </section>
@@ -38,7 +31,6 @@ function Home() {
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                   allowfullscreen>
                 </iframe>
-            
             </main>
             <footer>
                 <p>Created By Anica Na, Sabrina Chan, Sarah Haworth, Nathan Davis © 2024</p>
