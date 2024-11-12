@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../src/styles.css">
 </head>
 <body>
     <div class="form-container">
-        <h2>Login to Your Account</h2>
-        <form action="/profile.html" method="post">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+        <h2>User Login</h2>
+        <form id="loginForm">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
@@ -21,5 +21,33 @@
         
         <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
     </div>
+    
+    <footer>
+        <p>&copy; 2024 PNW Connects. All rights reserved.</p>
+        <p>Contact: contact@pnwconnects.com</p>
+    </footer>
+
+    <!-- Import Firebase authentication functionality -->
+    <script type="module">
+        import { auth } from './firebase-config.js';
+        import { signInWithEmailAndPassword } from "firebase/auth";
+
+        // Handle login form submission
+        document.getElementById("loginForm").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            try {
+                const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                console.log("User signed in:", userCredential.user);
+                // Redirect to profile page or handle post-login actions
+                window.location.href = "/profile.html"; // Redirect to the profile page after login
+            } catch (error) {
+                console.error("Error signing in:", error.message);
+                alert("Invalid credentials. Please try again.");
+            }
+        });
+    </script>
 </body>
 </html>
