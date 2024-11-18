@@ -43,16 +43,11 @@ function displayEvents(events) {
         const eventName = event.name;
         const eventDate = formatDate(event.dates.start.localDate);
         const eventLink = event.url;
-        const accessibility = event.accessibleSeatingDetail;
-        const time = event.time
-        //const eventLocation = event.location;
 
         eventCard.innerHTML = `
             <img src="${imageUrl}" alt="${eventName}">
             <h3>${eventName}</h3>
             <p>${eventDate}</p>
-            <p>${time}</p>
-            <p>${accessibility}</p>
             <a href="${eventLink}" target="_blank">Get Tickets</a>
         `;
 
