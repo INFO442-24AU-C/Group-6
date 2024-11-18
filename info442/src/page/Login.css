@@ -1,7 +1,6 @@
 .login-container {
-    background-image: url(../img/green.jpg); /* Dark background */
-    background-repeat: no-repeat;
-    background-size: 2600px;
+    background-image: url('../img/green.jpg'); 
+    background-size: cover;
     color: #ffffff; /* White text color for contrast */
     display: flex;
     justify-content: center;
