@@ -79,6 +79,15 @@ const Profile = () => {
                 </div>
             )}
         </div>
+
+        // <div className="profile-edit-container">
+        //     <input type="text" value={name} onChange={e => setName(e.target.value)} placeholder="Name" />
+        //     <input type="text" value={pronouns} onChange={e => setPronouns(e.target.value)} placeholder="Pronouns" />
+        //     <input type="text" value={socialMedia} onChange={e => setSocialMedia(e.target.value)} placeholder="Social Media Link" />
+        //     <input type="file" onChange={e => setProfilePic(e.target.files[0])} />
+        //     <button onClick={handleSaveProfile} disabled={loading}>Save Profile</button>
+        //     {error && <p className="error">{error}</p>}
+        // </div>
     );
 };
 
