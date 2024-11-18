@@ -1,15 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Myevent.css';
+import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+
 
 function MyEvent() {
     return (
         <div className="app-container">
-            <header>
-                <nav>
-                <h1 className="page-title">PNW Connects</h1>
-                </nav>
-            </header>
             <div className="container">
                 <aside>
                     <ul>
@@ -30,12 +29,8 @@ function MyEvent() {
                     </section>
                 </main>
             </div>
-            <footer>
-                <div className="footer-content">
-                    <p>INFO 442</p>
-                </div>
-            </footer>
         </div>
+
     );
 }
 
