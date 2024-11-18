@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { doc, setDoc, getDoc } from 'firebase/firestore';
-import './Profile.css';
-import Profiledata from '../components/Profiledata'; 
-import { Form, Button, Alert } from 'react-bootstrap';
 import { auth, database } from '../index'; 
 import './Profile.css'; 
 
