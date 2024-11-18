@@ -6,12 +6,14 @@ const categorySelect = document.getElementById('category-select');
 // calling the Ticketmaster API
 async function fetchEvents(category = "") {
     try {
-        let response = await fetch(`https://app.ticketmaster.com/discovery/v2/events.json?dmaId=385&apikey=9PrNGB9k7uy3dln6mBGBtGxL6vMXW86B`);
+        let url = `https://app.ticketmaster.com/discovery/v2/events.json?dmaId=385&apikey=9PrNGB9k7uy3dln6mBGBtGxL6vMXW86B`;
         if (category) {
-            response += `&classificationName=${encodeURIComponent(category)}`;
+            url += `&classificationName=${encodeURIComponent(category)}`;
         }
+        const response = await fetch(url);
         const data = await response.json();
-        const events = data._embedded.events;
+        const events = data._embedded?.events;
+        
         if (events) {
             displayEvents(events);
         } else {
@@ -19,6 +21,7 @@ async function fetchEvents(category = "") {
         }
     } catch (error) {
         console.error('Error fetching events:', error);
+        eventsContainer.innerHTML = '<p>Failed to fetch events<p>'
     }
 }
 
@@ -58,9 +61,11 @@ function displayEvents(events) {
 }
 
 function filterEvents() {
-    const selectedCategory = categorySelect.value;
+    const selectedCategory = document.getElementById('category-select').value;;
     fetchEvents(selectedCategory);
 }
 
 
 fetchEvents();
+
+document.getElementById('filterButton').addEventListener('click', filterEvents);
