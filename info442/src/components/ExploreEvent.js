@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './ExploreEvent.css';
 
+
 function ExploreEvent() {
     const [events, setEvents] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('');

@@ -1,6 +1,5 @@
 const apiKey = '9PrNGB9k7uy3dln6mBGBtGxL6vMXW86B';  
 const eventsContainer = document.getElementById('events-container');
-const categorySelect = document.getElementById('category-select');
 
 
 // calling the Ticketmaster API
@@ -55,12 +54,10 @@ function displayEvents(events) {
     });
 }
 
-function filterEvents() {
-    const selectedCategory = document.getElementById('category-select').value;;
-    fetchEvents(selectedCategory);
+function filterEvents(category) {
+    fetchEvents(category);
 }
 
 
 fetchEvents();
 
-document.getElementById('filterButton').addEventListener('click', filterEvents);
