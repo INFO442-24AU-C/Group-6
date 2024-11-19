@@ -29,13 +29,10 @@ function ExploreEvent() {
     return (
         <div>
             <div className="filter-container">
-                <select value={selectedCategory} onChange={handleCategoryChange}>
-                    <option value="">All</option>
-                    <option value="music">Music</option>
-                    <option value="sports">Sports</option>
-                    <option value="arts & theatre">Theater</option>
-                </select>
-                <button onClick={() => fetchEvents(selectedCategory)}>Filter</button>
+                <button onclick="handleCategoryChange('')">All</button>
+                <button onclick="handleCategoryChange('music')">Music</button>
+                <button onclick="handleCategoryChange('sports')">Sports</button>
+                <button onclick="handleCategoryChange('arts & theatre')">Theater</button>
             </div>
             <div className="events-container">
                 {events.length > 0 ? events.map(event => (

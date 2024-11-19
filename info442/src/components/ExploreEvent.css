@@ -61,6 +61,6 @@
 }
 
 .filter-container button:hover {
-    background-color: #54d0e9;
+    background-color: rgb(141, 210, 141);
     color: white;
 }
