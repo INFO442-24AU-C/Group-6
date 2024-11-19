@@ -6,18 +6,13 @@
     <title>Event Cards</title>
     <link rel="stylesheet" href="../src/event.css">
 </head>
-<body>
-    <h1>Upcoming Events in Seattle</h1>
-    
-    <!--filter section-->
+<body>    
+    <!-- filter buttons-->
     <div class="filter-container">
-        <select id="category-select">
-            <option value="">All</option>
-            <option value="music">Music</option>
-            <option value="sports">Sports</option>
-            <option value="arts & theatre">Theater</option>
-        </select>
-        <button id="filterButton" onclick="filterEvents()">Filter</button>
+        <button onclick="filterEvents('')">All</button>
+        <button onclick="filterEvents('music')">Music</button>
+        <button onclick="filterEvents('sports')">Sports</button>
+        <button onclick="filterEvents('arts & theatre')">Theater</button>
     </div>
     
     <div id="events-container"></div>
