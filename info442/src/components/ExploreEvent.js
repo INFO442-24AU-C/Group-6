@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ExploreEvent.css';
 
 
@@ -22,17 +22,22 @@ function ExploreEvent() {
         }
     }
 
-    function handleCategoryChange(event) {
-        setSelectedCategory(event.target.value);
+    function handleCategoryChange(category) {
+        setSelectedCategory(category);
+        fetchEvents(category);
     }
+
+    useEffect(() => {
+        fetchEvents();
+    }, []);
 
     return (
         <div>
             <div className="filter-container">
-                <button onclick="handleCategoryChange('')">All</button>
-                <button onclick="handleCategoryChange('music')">Music</button>
-                <button onclick="handleCategoryChange('sports')">Sports</button>
-                <button onclick="handleCategoryChange('arts & theatre')">Theater</button>
+                <button onClick={() => handleCategoryChange('')}>All</button>
+                <button onClick={() => handleCategoryChange('music')}>Music</button>
+                <button onClick={() => handleCategoryChange('sports')}>Sports</button>
+                <button onClick={() => handleCategoryChange('arts & theatre')}>Theater</button>
             </div>
             <div className="events-container">
                 {events.length > 0 ? events.map(event => (
