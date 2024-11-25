@@ -1,4 +1,4 @@
-.events-grid {
+/* .events-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
@@ -26,6 +26,6 @@
 
 .event-preview p {
     margin-top: 10px;
-}
+} */
 
 

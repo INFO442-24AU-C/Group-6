@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { auth } from '../index'; 
-import '../page/Login.css';
+import './Login.css';
 
 const AuthStatus = () => {
   const [user, setUser] = useState(null);

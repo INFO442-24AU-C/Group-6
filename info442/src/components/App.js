@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navigation from './page/Navigation';
-import Home from './page/Home';
-import MyEvent from './page/Myevent';
-import Login from './page/Login'; 
-import AuthDetails from './components/AuthDetails';
-import Profile from './page/Profile';
-import Explore from './page/Explore';
+import Navigation from './Navigation';
+import Home from './Home';
+import MyEvent from './Myevent';
+import Login from './Login'; 
+import AuthDetails from './AuthDetails';
+import Profile from './Profile';
+import Explore from './Explore';
 
 function App() {
   return (

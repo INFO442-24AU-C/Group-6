@@ -14,7 +14,7 @@
 }
 
 .navbar-background {
-    background-image: url("../img/pnw.jpg");
+    background-image: url("/public/img/pnw.jpg");
     background-size: cover;
     background-position: center;
     width: 100%

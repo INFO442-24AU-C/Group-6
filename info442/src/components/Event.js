@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './Event.css'; 
+// import './Event.css'; 
 
 const Events = () => {
     const [events, setEvents] = useState({ Music: {featured: null, list: []}, Art: {featured: null, list: []}, Party: {featured: null, list: []}, Sports: {featured: null, list: []} });

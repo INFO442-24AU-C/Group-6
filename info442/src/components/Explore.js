@@ -1,6 +1,6 @@
 import React from 'react';
 import './Explore.css'; // Update the path if necessary
-import ExploreEvent from '../components/ExploreEvent';
+import ExploreEvent from './ExploreEvent';
 
 function Explore() {
     return (
