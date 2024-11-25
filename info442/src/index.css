@@ -11,29 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.events-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  padding: 20px;
-}
-
-.event-category {
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 10px;
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  text-align: center;
-}
-
-.event-preview img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.event-preview p {
-  margin-top: 10px;
-}

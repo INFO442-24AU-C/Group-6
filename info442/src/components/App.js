@@ -6,7 +6,7 @@ import MyEvent from './Myevent';
 import Login from './Login'; 
 import AuthDetails from './AuthDetails';
 import Profile from './Profile';
-import Explore from './Explore';
+import ExploreEvent from './ExploreEvent';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/myevent" element={<MyEvent />} />
-        <Route path="/explore" element={<Explore />} />
+        <Route path="/explore" element={<ExploreEvent />} />
         <Route path="/login" element={<Login />} /> 
         <Route path="/profile" element={<Profile />} />
       </Routes>

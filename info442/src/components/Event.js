@@ -28,26 +28,37 @@ const Events = () => {
     };
 
     return (
-        <div className="events-grid">
-            {categories.map(category => (
-                <div key={category} className="event-category" onClick={() => handleCategoryClick(category)}>
-                    <h2>{category}</h2>
-                    {events[category].featured ? (
-                        <div className="event-preview">
-                            <img src={events[category].featured.images[0].url} alt={category} />
-                            <p>{events[category].featured.name}</p>
+        <div className="container py-4">
+            <div className="row row-cols-1 row-cols-md-4 g-4">
+                {categories.map(category => (
+                    <div key={category} className="col">
+                        <div    
+                            className="card border-1 shadow-sm text-center h-100"
+                            onClick={() => handleCategoryClick(category)}
+                        >
+                            <div className="card-body">
+                                <h2 className="card-title">{category}</h2>
+                                {events[category].featured ? (
+                                    <div>
+                                        <img src={events[category].featured.images[0].url} alt={category} className="card-img-top rounded img-custom" />
+                                        <p className="card-text mt-2">{events[category].featured.name}</p>
+                                    </div>
+                                ) : (
+                                    <p className="card-text">Loading...</p>
+                                )}
+                            </div>
+                            <div className="card-footer">
+                                {events[category].list.map(event => (
+                                    <div key={event.id} className="my-2">
+                                        <img src={event.images[0].url} alt={event.name} className="img-fluid rounded"/>
+                                        <p className="mt-2">{event.name}</p>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                    ) : (
-                        <p>Loading...</p>
-                    )}
-                    {events[category].list.map(event => (
-                        <div key={event.id} className="event-preview">
-                            <img src={event.images[0].url} alt={event.name} />
-                            <p>{event.name}</p>
-                        </div>
-                    ))}
-                </div>
-            ))}
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };
