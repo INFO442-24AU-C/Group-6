@@ -36,17 +36,19 @@ function ExploreEvent() {
                 <button className={`btn ${selectedCategory === 'sports' ? 'btn-dark' : 'btn-outline-secondary'}`} onClick={() => handleCategoryChange('sports')}>Sports</button>
                 <button className={`btn ${selectedCategory === 'arts & theatre' ? 'btn-dark' : 'btn-outline-secondary'}`} onClick={() => handleCategoryChange('arts & theatre')}>Theater</button>
             </div>
-            <div className="d-flex flex-wrap justify-content-center gap-3 mx-3">
-                {events.length > 0 ? events.map(event => (
-                    <div key={event.id} className="card">
-                        <img src={event.images[0]?.url || ''} alt={event.name}/>
-                        <div className="card-body p-2">
-                            <h3>{event.name}</h3>
+            <div className="container py-4">
+                <div className="row row-cols-2 row-cols-md-4 g-4">
+                    {events.length > 0 ? events.map(event => (
+                        <div key={event.id} className="card g-4">
+                            <img src={event.images[0]?.url || ''} alt={event.name} className="card-img-top"/>
+                            <div className="card-body">
+                                <h3 className="card-title">{event.name}</h3>
+                                <p className="card-text mb-3">{new Date(event.dates.start.localDate).toLocaleDateString()}</p>
+                                <a href={event.url} target="_blank" rel="noopener noreferrer" className="btn btn-success">Get Tickets</a>
+                            </div>
                         </div>
-                        <p className="card-text mb-3">{new Date(event.dates.start.localDate).toLocaleDateString()}</p>
-                        <a href={event.url} target="_blank" rel="noopener noreferrer" className="btn btn-success">Get Tickets</a>
-                    </div>
-                )) : <p>No events found for this category.</p>}
+                    )) : <p>No events found for this category.</p>}
+                </div>
             </div>
         </div>
     );

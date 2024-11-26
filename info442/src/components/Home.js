@@ -9,7 +9,7 @@ function Home() {
 
                 <div>
                     <h1 className="text-dark mb-4 text-start fs-2">Featured Events</h1>
-                    <div className="d-flex flex-wrap justify-content-center gap-3">
+                    <div>
                         <Event /> 
                     </div>
                 </div>

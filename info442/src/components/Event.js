@@ -29,11 +29,11 @@ const Events = () => {
 
     return (
         <div className="container py-4">
-            <div className="row row-cols-1 row-cols-md-4 g-4">
+            <div className="row row-cols-2 row-cols-md-4 g-4">
                 {categories.map(category => (
                     <div key={category} className="col">
                         <div    
-                            className="card border-1 shadow-sm text-center h-100"
+                            className="card border-1 shadow-sm text-center"
                             onClick={() => handleCategoryClick(category)}
                         >
                             <div className="card-body">
