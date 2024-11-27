@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { auth, database } from '../index'; // Ensure these are correctly imported
+import { doc, setDoc } from "firebase/firestore"; // Import necessary Firestore functions
 
 function ExploreEvent() {
     const [events, setEvents] = useState([]);
@@ -24,6 +26,25 @@ function ExploreEvent() {
         fetchEvents(category);
     }
 
+    function handleRSVP(eventId, eventName) {
+        if (!auth.currentUser) {
+            alert("Please log in to RSVP");
+            return;
+        }
+        const rsvpRef = doc(database, "RSVP", `${auth.currentUser.uid}_${eventName}`);
+        setDoc(rsvpRef, {
+            userId: auth.currentUser.uid,
+            eventId: eventId,
+            eventName: eventName,
+        }, { merge: true })
+        .then(() => {
+            alert("RSVP successful!");
+        })
+        .catch((error) => {
+            console.error("Error writing document:", error);
+        });
+    }
+
     useEffect(() => {
         fetchEvents();
     }, []);
@@ -45,6 +66,7 @@ function ExploreEvent() {
                                 <h3 className="card-title">{event.name}</h3>
                                 <p className="card-text mb-3">{new Date(event.dates.start.localDate).toLocaleDateString()}</p>
                                 <a href={event.url} target="_blank" rel="noopener noreferrer" className="btn btn-success">Get Tickets</a>
+                                <button onClick={() => handleRSVP(event.id, event.name)} className="btn btn-primary mt-2">RSVP</button>
                             </div>
                         </div>
                     )) : <p>No events found for this category.</p>}
