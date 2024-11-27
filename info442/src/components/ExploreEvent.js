@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { auth, database } from '../index'; // Ensure these are correctly imported
-import { doc, setDoc } from "firebase/firestore"; // Import necessary Firestore functions
+import { auth, database } from '../index'; 
+import { doc, setDoc } from "firebase/firestore"; 
 
 function ExploreEvent() {
     const [events, setEvents] = useState([]);

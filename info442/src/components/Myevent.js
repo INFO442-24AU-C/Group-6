@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { auth, database } from '../index';
 import { collection, query, where, getDocs } from 'firebase/firestore';
-import Notification from './Notification'; // Ensure this path is correct
+import Notification from './Notification'; 
 import './Myevent.css';
 
 function MyEvent() {
     const [myEvents, setMyEvents] = useState([]);
-    const [eventIds, setEventIds] = useState([]); // Add this line
+    const [eventIds, setEventIds] = useState([]); 
 
     useEffect(() => {
         fetchMyEvents();
@@ -18,10 +18,10 @@ function MyEvent() {
             try {
                 const querySnapshot = await getDocs(q);
                 const events = [];
-                const ids = []; // Local array to store event IDs
+                const ids = []; 
                 for (const doc of querySnapshot.docs) {
                     const data = doc.data();
-                    ids.push(data.eventId); // Store event ID
+                    ids.push(data.eventId); 
                     const eventDetails = await fetchEventDetails(data.eventId);
                     if (eventDetails) {
                         events.push({
@@ -32,7 +32,7 @@ function MyEvent() {
                     }
                 }
                 setMyEvents(events);
-                setEventIds(ids); // Update the eventIds state
+                setEventIds(ids);
             } catch (error) {
                 console.error("Error fetching RSVP'd events:", error);
             }
