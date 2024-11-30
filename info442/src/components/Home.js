@@ -1,22 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Event from './Event';
+import './Home.css';
 
 function Home() {
     return (
-        <div>
+        <div className="home-content">
             <main>
-
                 <div>
-                    <h1 className="text-dark mb-4 text-start fs-2">Featured Events</h1>
-                    <div>
+                    <h1 className="section-title">Featured Events</h1>
+                    <div className="event-container">
                         <Event /> 
                     </div>
                 </div>
 
                 <div>
-                    <h1 className="text-dark mb-4 text-start fs-4">Our Purpose</h1>
-                    <p className="text-start">
+                    <h1 className="subheading">Our Purpose</h1>
+                    <p className="paragraph">
                         We strive to connect people across the Pacific Northwest 
                         and help them form lasting friendships in a way that is accessible, stress-free, 
                         and fun. By fostering a sense of community, we aim to create opportunities for 
@@ -24,22 +24,22 @@ function Home() {
                         experiences.
                     </p>
 
-                    <h1 className="text-dark mb-4 text-start fs-4">How It Works</h1>
-                    <p className="text-start">
+                    <h1 className="subheading">How It Works</h1>
+                    <p className="paragraph">
                         First, find an event that interests you! PNW Connects offers
                         opportunities at a wide range of events, from concerts to sports games. Once you 
                         find an event, purchase your tickets. All events posted on our site are linked to
                         third-party vendors where you can securely buy your ticket.
                     </p>
-                    <p className="text-start">
+                    <p className="paragraph">
                         After purchasing your ticket, RSVP for the event on our 
                         platform. You will receive confirmation that we have received your RSVP, ensuring 
                         you’re officially part of the fun. During the week of the event, we will send you 
                         an email with details about a designated check-in location and your mission instructions.
                     </p>
 
-                    <h1 className="text-dark mb-4 text-start fs-4">What is a Mission?</h1>
-                    <p className="text-start">
+                    <h1 className="subheading">What is a Mission?</h1>
+                    <p className="paragraph">
                         A mission is a mini-adventure designed to help you break
                         the ice, enjoy a new experience, and connect with others. Think of it as a fun side 
                         quest that is low pressure and helps you meet new people along the way. Each 
@@ -47,7 +47,7 @@ function Home() {
                         interaction and collaboration with fellow attendees that have registered through 
                         PNW Connects.
                     </p>
-                    <p className="text-start">
+                    <p className="paragraph">
                         Missions are designed to ease the process of meeting new
                         people and spark meaningful conversations while keeping things casual and enjoyable.
                         Whether you're exploring clues at a museum event, joining a team challenge at a 

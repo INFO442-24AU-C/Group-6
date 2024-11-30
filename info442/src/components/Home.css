@@ -1,0 +1,79 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 1rem;
+}
+
+.home-content {
+    background-color: rgba(173, 216, 230, 0.5); /* Light blue with transparency */
+    padding: 2rem 1.5rem;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.featured-events {
+    margin-top: 2rem;
+    padding: 0 1.5rem;
+}
+
+.event-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: space-between;
+}
+
+.event-card {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: calc(33% - 1rem);
+}
+
+.event-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #0073e6;
+    margin-bottom: 1.5rem;
+    border-left: 6px solid #0073e6;
+    padding-left: 0.5rem;
+}
+
+.subheading {
+    font-size: 1.5rem;
+    color: #0056b3;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.paragraph {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.875rem;
+}
