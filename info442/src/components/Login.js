@@ -1,15 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { auth } from '../index'; 
 import SignIn from './Signin'; 
 import SignUp from './Signup'; 
+import { onAuthStateChanged } from 'firebase/auth';
 
 const Login = () => {
   const [isSigningUp, setIsSigningUp] = useState(false);
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
 
-  
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setIsUserLoggedIn(true);
+      } else {
+        setIsUserLoggedIn(false);
+      }
+    });
+    return () => unsubscribe(); 
+  }, []);
 
   const toggleSignInSignUp = () => {
     setIsSigningUp(!isSigningUp);
   };
+
+  if (isUserLoggedIn) {
+    return (
+      <div className="login-container">
+        <div className="login-message">
+          <p>You are already logged in!</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="login-container">
@@ -38,46 +60,5 @@ export default Login;
 
 
 
-/*import React, { useState, useEffect } from 'react';
-import { Navigate } from 'react-router-dom';
-import { auth } from '../index';
-import { StyledFirebaseAuth } from 'react-firebaseui';
-import { GoogleAuthProvider } from 'firebase/auth';
 
-function Login(props) {
-  const { currentUser } = props;
-  const [uiConfig, setUiConfig] = useState(null);
-
-  useEffect(() => {
-    const configObj = {
-      signInOptions: [
-        {
-          provider: GoogleAuthProvider.PROVIDER_ID,
-          requireDisplayName: true,
-        }
-      ],
-      signInFlow: 'popup',
-      callbacks: {
-        signInSuccessWithAuthResult: () => false,
-      },
-      credentialHelper: 'none',
-    };
-    setUiConfig(configObj);
-  }, []);
-
-  if (currentUser?.userId) {
-    return <Navigate to="/myevent" />;
-  }
-
-  return (
-    <div className="card bg-light mx-auto">
-      <div className="container card-body">
-        <h1 className="text-center fs-2 fw-bolder">Sign In Here:</h1>
-        {uiConfig && <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={auth} />}
-      </div>
-    </div>
-  );
-}
-
-export default Login;*/
 
