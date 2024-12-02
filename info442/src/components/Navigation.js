@@ -14,7 +14,7 @@ function Navigation() {
           <img src="/favicon.ico" alt="favicon" className="navbar-favicon" />
           PNW Connects
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle className="bg-white" aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
           <Nav.Link as={Link} to="/" className="nav-link">Home</Nav.Link>

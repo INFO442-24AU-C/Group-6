@@ -32,10 +32,6 @@
     margin-right: 5px; 
   }
   
-  .navbar-brand:hover {
-    color: #2ecc71 !important; 
-  }
-  
   .navbar-nav {
     display: flex;
     gap: 1.5rem;
