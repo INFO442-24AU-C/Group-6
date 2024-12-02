@@ -50,6 +50,7 @@ const Profile = () => {
   };
 
   return (
+    <div className="home">
     <Container className="py-5">
         <Row className="g-4 align-items-start">
             <Col className="mx-auto">
@@ -114,6 +115,7 @@ const Profile = () => {
             )}
         </Row>
     </Container>
+    </div>
   );
 };
 
