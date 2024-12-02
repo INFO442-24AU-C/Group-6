@@ -35,10 +35,11 @@ const Login = () => {
 
   return (
     <div className="login-container">
+      <div className="form-container">
       {isSigningUp ? (
         <>
           <SignUp />
-          <p>
+          <p className="toggle-signin-signup">
             Already have an account?{' '}
             <button onClick={toggleSignInSignUp}>Sign In</button>
           </p>
@@ -52,6 +53,7 @@ const Login = () => {
           </p>
         </>
       )}
+      </div>
     </div>
   );
 };

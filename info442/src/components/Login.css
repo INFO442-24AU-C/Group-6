@@ -1,16 +1,16 @@
 .login-container {
     background-image: url('/public/img/green.jpg'); 
     background-size: cover;
-    color: #ffffff; /* White text color for contrast */
+    color: #ffffff; 
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */
-    font-family: 'Arial', sans-serif; /* Ensures text is readable */
+    height: 100vh; 
+    font-family: 'Arial', sans-serif; 
 }
 
 .login-container button {
-    background-color: #4A90E2; /* Bright color for buttons */
+    background-color: #4A90E2; 
     color: white;
     border: none;
     padding: 10px 20px;
@@ -21,43 +21,69 @@
 }
 
 .login-container button:hover {
-    background-color: #357ABD; /* Darker shade for hover effect */
+    background-color: #357ABD; 
 }
 
 .login-container p {
-    color: #fff; /* Ensure paragraphs are readable */
+    color: #fff; 
+    text-align: center;
+    margin-top: 20px;
+}
+
+.toggle-signin-signup {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; 
+}
+
+.toggle-signin-signup button {
+    background-color: transparent;
+    border: none;
+    color: #4A90E2;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.login-message p {
+    color: #fff; 
     text-align: center;
     margin-top: 20px;
     font-size: 60px;
 }
 
 .input-field {
-    background-color: #333; /* Darker field backgrounds */
-    border: 1px solid #555; /* Subtle borders for depth */
-    color: #fff; /* White text */
-    padding: 8px 12px; /* Comfortable padding */
-    border-radius: 4px; /* Rounded corners */
-    margin-bottom: 15px; /* Space between fields */
+    background-color: #333; 
+    border: 1px solid #555; 
+    color: #fff; 
+    padding: 8px 12px; 
+    border-radius: 4px; 
+    margin-bottom: 15px; 
 }
 
 .input-field:focus {
-    border-color: #4A90E2; /* Highlight focus with theme color */
-    outline: none; /* Remove default focus outline */
+    border-color: #4A90E2; 
+    outline: none; 
 }
 
 .form-group {
-    width: 100%; /* Full width group for alignment */
+    width: 100%; 
     display: flex;
     flex-direction: column;
 }
 
 .form-group label {
-    color: #ccc; /* Lighter text for labels */
+    color: #ccc; 
     margin-bottom: 5px;
 }
 
 h1 {
-    color: #fff; /* Titles in white */
+    color: #fff; 
     text-align: center;
 }
 
