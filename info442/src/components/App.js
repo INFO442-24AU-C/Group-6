@@ -6,6 +6,7 @@ import MyEvent from './Myevent';
 import Login from './Login'; 
 import AuthDetails from './AuthDetails';
 import Profile from './Profile';
+
 import ExploreEvent from './ExploreEvent';
 
 function App() {

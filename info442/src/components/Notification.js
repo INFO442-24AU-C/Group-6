@@ -19,8 +19,9 @@ function Notification({ eventIds }) {
             for (const doc of querySnapshot.docs) {
                 const data = doc.data();
                 if (data.userId !== auth.currentUser.uid) {
-                    const personalizedNotification = `Thank you and congrats on RSVPing for ${data.eventName}. Check your inbox the week of the event to receive a check-in location and instructions for your mission. We look forward to connecting with you!`;
-
+                    const personalizedNotification = `Thank you and congrats on RSVPing for ${data.eventName}.
+                        Check your inbox the week of the event to receive a check-in location and instructions 
+                        for your mission. We look forward to connecting with you!`;
                     allNotifications.push(personalizedNotification);
 
                     const userName = await fetchUserName(data.userId);
@@ -41,7 +42,10 @@ function Notification({ eventIds }) {
         <div>
             <h2>Notifications</h2>
             {notifications.length > 0 ? (
-                notifications.map((note, index) => <p key={index}>{note}</p>)
+                notifications.map((note, index) => 
+                    <div key={index} className="border border-dark bg-white p-3 mb-3 rounded">
+                        {note}
+                    </div>)
             ) : (
                 <p>No new notifications.</p>
             )}
