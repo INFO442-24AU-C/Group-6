@@ -19,7 +19,10 @@ function Notification({ eventIds }) {
             for (const doc of querySnapshot.docs) {
                 const data = doc.data();
                 if (data.userId !== auth.currentUser.uid) {
-                    
+                    const personalizedNotification = `Thank you and congrats on RSVPing for ${data.eventName}. Check your inbox the week of the event to receive a check-in location and instructions for your mission. We look forward to connecting with you!`;
+
+                    allNotifications.push(personalizedNotification);
+
                     const userName = await fetchUserName(data.userId);
                     allNotifications.push(`${userName} is also attending ${data.eventName}`);
                 }

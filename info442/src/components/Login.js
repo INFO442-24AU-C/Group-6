@@ -27,7 +27,7 @@ const Login = () => {
     return (
       <div className="login-container">
         <div className="login-message">
-          <p>You are already logged in!</p>
+          <p>You are logged in!</p>
         </div>
       </div>
     );

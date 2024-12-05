@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { auth, database } from '../index'; 
-import { doc, setDoc } from "firebase/firestore"; 
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { auth, database } from '../index';
+import { doc, setDoc } from "firebase/firestore";
 import "./ExploreEvent.css";
 
 function ExploreEvent() {
     const [events, setEvents] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('');
+    const navigate = useNavigate(); // Initialize the useNavigate hook
 
     async function fetchEvents(category = "") {
         try {
@@ -40,6 +42,7 @@ function ExploreEvent() {
         }, { merge: true })
         .then(() => {
             alert("RSVP successful!");
+            navigate('/Myevent'); 
         })
         .catch((error) => {
             console.error("Error writing document:", error);

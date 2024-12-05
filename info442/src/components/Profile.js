@@ -11,6 +11,9 @@ const Profile = () => {
   const [file, setFile] = useState(null);
   const [userData, setUserData] = useState(null);
 
+  // Derived state to track if the Save Profile button should be disabled
+  const isSaveDisabled = !(name || pronoun || socialmedia || file);
+
   useEffect(() => {
     const fetchUserData = async () => {
       if (auth.currentUser) {
@@ -51,70 +54,70 @@ const Profile = () => {
 
   return (
     <div className="home">
-    <Container className="py-5">
+      <Container className="py-5">
         <Row className="g-4 align-items-start">
-            <Col className="mx-auto">
+          <Col className="mx-auto">
             <h1 className="text-center text-dark mb-4">Edit Profile</h1>
             <Form onSubmit={handleSubmit} className="border p-4 rounded bg-light shadow-sm h-100">
-                <Form.Group className="mb-3">
+              <Form.Group className="mb-3">
                 <Form.Label>Name</Form.Label>
                 <Form.Control
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="Full Name"
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Full Name"
                 />
-                </Form.Group>
-                <Form.Group className="mb-3">
+              </Form.Group>
+              <Form.Group className="mb-3">
                 <Form.Label>Pronoun</Form.Label>
                 <Form.Control
-                    type="text"
-                    value={pronoun}
-                    onChange={(e) => setPronoun(e.target.value)}
-                    placeholder="Pronouns"
+                  type="text"
+                  value={pronoun}
+                  onChange={(e) => setPronoun(e.target.value)}
+                  placeholder="Pronouns"
                 />
-                </Form.Group>
-                <Form.Group className="mb-3">
+              </Form.Group>
+              <Form.Group className="mb-3">
                 <Form.Label>Social Media Link</Form.Label>
                 <Form.Control
-                    type="text"
-                    value={socialmedia}
-                    onChange={(e) => setSocialMedia(e.target.value)}
-                    placeholder="Social Media Link"
+                  type="text"
+                  value={socialmedia}
+                  onChange={(e) => setSocialMedia(e.target.value)}
+                  placeholder="Social Media Link"
                 />
-                </Form.Group>
-                <Form.Group className="mb-4">
+              </Form.Group>
+              <Form.Group className="mb-4">
                 <Form.Label>Profile Image</Form.Label>
                 <Form.Control type="file" onChange={handleFileChange} />
-                </Form.Group>
-                <Button type="submit" variant="dark" className="w-100">
+              </Form.Group>
+              <Button type="submit" variant="dark" className="w-100" disabled={isSaveDisabled}>
                 Save Profile
-                </Button>
+              </Button>
             </Form>
-            </Col>
+          </Col>
 
-            {userData && (
+          {userData && (
             <Col className="mx-auto">
-                <h1 className="text-center text-dark mb-4">Profile</h1>
-                <div className="p-4 border rounded bg-light shadow-sm h-100">
+              <h1 className="text-center text-dark mb-4">Profile</h1>
+              <div className="p-4 border rounded bg-light shadow-sm h-100">
                 <p><strong>Name:</strong> {userData.name}</p>
                 <p><strong>Pronoun:</strong> {userData.pronoun}</p>
                 <p><strong>Social Media:</strong> {userData.socialmedia}</p>
                 {file && (
-                    <div className="text-center">
+                  <div className="text-center">
                     <img
-                        src={file}
-                        alt="Profile"
-                        className="img-fluid rounded-circle"
-                        style={{ maxWidth: "150px", margin: "20px 0" }}
+                      src={file}
+                      alt="Profile"
+                      className="img-fluid rounded-circle"
+                      style={{ maxWidth: "150px", margin: "20px 0" }}
                     />
-                    </div>
+                  </div>
                 )}
-                </div>
+              </div>
             </Col>
-            )}
+          )}
         </Row>
-    </Container>
+      </Container>
     </div>
   );
 };
