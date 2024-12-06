@@ -55,7 +55,7 @@ function ExploreEvent() {
 
     return (
         <div className="home">
-            <div className="d-flex justify-content-center gap-2 mb-3">
+            <div className="filter-container d-flex justify-content-center gap-2 mb-3">
                 <button className={`btn ${selectedCategory === '' ? 'btn-dark' : 'btn-outline-secondary'}`} onClick={() => handleCategoryChange('')}>All</button>
                 <button className={`btn ${selectedCategory === 'music' ? 'btn-dark' : 'btn-outline-secondary'}`} onClick={() => handleCategoryChange('music')}>Music</button>
                 <button className={`btn ${selectedCategory === 'sports' ? 'btn-dark' : 'btn-outline-secondary'}`} onClick={() => handleCategoryChange('sports')}>Sports</button>

@@ -6,16 +6,37 @@
 
 .button-container {
     display: flex;
-    justify-content: space-between; /* Space between buttons */
-    align-items: center; /* Align buttons vertically */
-    gap: 1rem; /* Add spacing between buttons */
-    margin-top: auto; /* Add spacing from the content above */
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem; 
+    margin-top: auto; 
 }
 
+.filter-container .btn{
+    margin-top: .5rem;
+    text-align: center;
+    font-size: 1rem;
+    padding: 1rem;
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color: aliceblue;
+    color: black;
+    border-color:aliceblue;
+}
 
+.filter-container .btn:hover{
+    margin-top: .5rem;
+    text-align: center;
+    font-size: 1rem;
+    padding: 1rem;
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color: black;
+    color: white;
+}
 
 .card-body .btn {
-    width: 48%; /* Buttons take equal width */
+    width: 48%; 
 }
 
 .card-body .btn-success {
