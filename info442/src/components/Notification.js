@@ -24,8 +24,8 @@ function Notification({ eventIds }) {
                         for your mission. We look forward to connecting with you!`;
                     allNotifications.push(personalizedNotification);
 
-                    const userName = await fetchUserName(data.userId);
-                    allNotifications.push(`${userName} is also attending ${data.eventName}`);
+                    // const userName = await fetchUserName(data.userId);
+                    // allNotifications.push(`${userName} is also attending ${data.eventName}`);
                 }
             }
         }
@@ -54,4 +54,7 @@ function Notification({ eventIds }) {
 }
 
 export default Notification;
+
+
+
 

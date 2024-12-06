@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { auth, database } from '../index';
 import { doc, setDoc, getDoc } from "firebase/firestore";
-import './Event.css'; 
+import './Event.css';
 
 const Events = () => {
     const [events, setEvents] = useState({
@@ -60,11 +60,6 @@ const Events = () => {
         alert("RSVP successful!");
     };
 
-    // Handle Get Tickets action
-    const handleGetTickets = (eventUrl) => {
-        window.open(eventUrl, '_blank');
-    };
-
     return (
         <div className="container py-4">
             <div className="row row-cols-2 row-cols-md-4 g-4">
@@ -75,27 +70,32 @@ const Events = () => {
                                 <h2 className="card-title">{category}</h2>
                                 {events[category].featured ? (
                                     <div>
-                                        <img 
-                                            src={events[category].featured.images[0].url} 
-                                            alt={category} 
-                                            className="card-img-top rounded img-custom" 
+                                        <img
+                                            src={events[category].featured.images[0]?.url}
+                                            alt={category}
+                                            className="card-img-top rounded img-custom"
                                         />
                                         <p className="card-text mt-2">{events[category].featured.name}</p>
                                         <p className="card-text mb-3">
                                             {new Date(events[category].featured.dates.start.localDate).toLocaleDateString()}
                                         </p>
-                                        <div className="button-container">
-                                            <button 
-                                                className="btn btn-primary mt-3"
-                                                onClick={() => handleRSVP(events[category].featured.id, events[category].featured.name)}
-                                            >
-                                                RSVP
-                                            </button>
-                                            <button 
-                                                className="btn btn-success mt-3 ms-2"
-                                                onClick={() => handleGetTickets(events[category].featured.url)}
+                                        <div className="button-container mt-auto">
+                                            {/* Get Tickets button links to the ticketmaster page */}
+                                            <a
+                                                href={events[category].featured.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="btn btn-success"
                                             >
                                                 Get Tickets
+                                            </a>
+
+                                            {/* RSVP button */}
+                                            <button
+                                                onClick={() => handleRSVP(events[category].featured.id, events[category].featured.name)}
+                                                className={`btn btn-primary ${!auth.currentUser ? 'disabled-btn' : ''}`}
+                                            >
+                                                RSVP
                                             </button>
                                         </div>
                                     </div>

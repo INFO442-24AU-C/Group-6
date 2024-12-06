@@ -12,6 +12,22 @@
     margin-top: auto; 
 }
 
+.disabled-btn {
+    background-color: #d6d6d6; 
+    border-color: #ccc; 
+    color: #888;
+    cursor: not-allowed; 
+}
+
+.disabled-btn:focus,
+.disabled-btn:hover {
+    background-color: #d6d6d6; 
+    border-color: #ccc; 
+    color: #888; 
+    box-shadow: none; 
+    text-decoration: none; 
+}
+
 .filter-container .btn{
     margin-top: .5rem;
     text-align: center;

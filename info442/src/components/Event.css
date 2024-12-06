@@ -80,6 +80,22 @@
     margin: 0.5rem 0;
 }
 
+.disabled-btn {
+    background-color: #d6d6d6; 
+    border-color: #ccc; 
+    color: #888;
+    cursor: not-allowed; 
+}
+
+.disabled-btn:focus,
+.disabled-btn:hover {
+    background-color: #d6d6d6; 
+    border-color: #ccc; 
+    color: #888; 
+    box-shadow: none; 
+    text-decoration: none; 
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     .row-cols-md-4 {
