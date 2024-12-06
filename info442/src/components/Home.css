@@ -43,11 +43,22 @@ main {
     padding: 1rem;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     width: calc(33% - 1rem);
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    text-align: center;
 }
 
 .event-card:hover {
     transform: scale(1.02);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.event-card img {
+    max-width: 100%;       
+    height: auto;        
+    border-radius: 6px;    
+    margin-bottom: 1rem;  
 }
 
 .section-title {

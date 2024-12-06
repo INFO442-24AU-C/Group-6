@@ -3,3 +3,21 @@
     min-height: 100vh; 
     width: 100%; 
 }
+
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Space between buttons */
+    align-items: center; /* Align buttons vertically */
+    gap: 1rem; /* Add spacing between buttons */
+    margin-top: auto; /* Add spacing from the content above */
+}
+
+
+
+.card-body .btn {
+    width: 48%; /* Buttons take equal width */
+}
+
+.card-body .btn-success {
+    white-space: nowrap; 
+}

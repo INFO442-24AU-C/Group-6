@@ -69,8 +69,10 @@ function ExploreEvent() {
                             <div className="card-body">
                                 <h3 className="card-title">{event.name}</h3>
                                 <p className="card-text mb-3">{new Date(event.dates.start.localDate).toLocaleDateString()}</p>
-                                <a href={event.url} target="_blank" rel="noopener noreferrer" className="btn btn-success">Get Tickets</a>
-                                <button onClick={() => handleRSVP(event.id, event.name)} className="btn btn-primary mt-2">RSVP</button>
+                                <div className="button-container mt-auto">
+                                    <a href={event.url} target="_blank" rel="noopener noreferrer" className="btn btn-success">Get Tickets</a>
+                                    <button onClick={() => handleRSVP(event.id, event.name)} className="btn btn-primary">RSVP</button>
+                                </div>
                             </div>
                         </div>
                     )) : <p>No events found for this category.</p>}
