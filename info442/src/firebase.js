@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCE5JhYedJk5QP5LX-Hn2s4ZYuMZyNSpVY",
+  apiKey: "AIzaSyCAzdlJFmpS66zyC5-69qqWDpmr1SQi8FA",
   authDomain: "pnw-connect.firebaseapp.com",
-  projectId: "pnw-connect",
+  projectId: "pnw-connects",
   storageBucket: "pnw-connect.firebasestorage.app",
-  messagingSenderId: "921966180003",
-  appId: "1:921966180003:web:f98cf3555757b9d4353116"
+  messagingSenderId: "77130043910",
+  appId: "1:77130043910:web:c32bb3f2d9433218e42987"
 };
 
 // Initialize Firebase
