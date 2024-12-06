@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Navigation.css'; 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -17,11 +17,11 @@ function Navigation() {
         <Navbar.Toggle className="bg-white" aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-          <Nav.Link as={Link} to="/" className="nav-link">Home</Nav.Link>
-            <Nav.Link as={Link} to="/myevent" className="nav-link">My Event</Nav.Link>
-            <Nav.Link as={Link} to="/explore" className="nav-link">Explore</Nav.Link>
-            <Nav.Link as={Link} to="/profile" className="nav-link">Profile</Nav.Link>
-            <Nav.Link as={Link} to="/login" className="nav-link">Login</Nav.Link>
+          <NavLink to="/" className="nav-link">Home</NavLink>
+            <NavLink to="/myevent" className="nav-link">My Event</NavLink>
+            <NavLink to="/explore" className="nav-link">Explore</NavLink>
+            <NavLink to="/profile" className="nav-link">Profile</NavLink>
+            <NavLink to="/login" className="nav-link">Login</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
