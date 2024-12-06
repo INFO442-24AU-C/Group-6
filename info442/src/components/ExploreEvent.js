@@ -129,9 +129,7 @@ function ExploreEvent() {
                                 <div className="button-container mt-auto">
                                     <a href={event.url} target="_blank" rel="noopener noreferrer" className="btn btn-success">Get Tickets</a>
                                     <button 
-                                        onClick={() => handleRSVP(event.id, event.name)} 
-                                        className={`btn btn-primary ${!auth.currentUser ? 'disabled-btn' : ''}`}
-                                        disabled={!auth.currentUser} // Disable if not logged in
+                                        onClick={() => handleRSVP(event.id, event.name)}                                         className={`btn btn-primary ${!auth.currentUser ? 'disabled-btn' : ''}`}
                                     >
                                         RSVP
                                     </button>
