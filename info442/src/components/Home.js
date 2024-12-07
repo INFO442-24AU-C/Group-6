@@ -57,15 +57,9 @@ function Home() {
                 </div>
                 
             </main>
-
-            <footer>
-                <p>Created By Anica Na, Sabrina Chan, Sarah Haworth, Nathan Davis © 2024</p>
-            </footer>
         </div>
     );
 }
 
 export default Home;
-
-
 
