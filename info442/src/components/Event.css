@@ -1,13 +1,12 @@
-/* Container styles */
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
     align-items: center;
-    flex-direction: flex;
     justify-content: center;
 }
 
-/* Card styles */
+
 .card {
     background-color: #fff;
     border-radius: 8px;
@@ -21,17 +20,15 @@
     justify-content: space-between;
 }
 
-
 .card:hover {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Card body styles */
+
 .card-body {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-
 }
 
 .card-title {
@@ -41,9 +38,9 @@
     text-transform: capitalize;
 }
 
-/* Image styles */
+
 .card-img-top {
-    max-height: 150px;
+    max-height: 150px; 
     object-fit: cover;
     border-radius: 6px;
     width: 100%;
@@ -54,14 +51,14 @@
     margin-bottom: 1rem;
 }
 
-/* Text styles */
+
 .card-text {
     font-size: 1rem;
     color: #333;
     text-align: left;
 }
 
-/* Footer styles */
+
 .card-footer {
     background-color: #f9f9f9;
     padding: 1rem;
@@ -69,7 +66,7 @@
 }
 
 .card-footer img {
-    max-height: 60px;
+    max-height: 60px; 
     object-fit: cover;
     border-radius: 4px;
     margin-right: 0.5rem;
@@ -81,30 +78,46 @@
 }
 
 .disabled-btn {
-    background-color: #d6d6d6; 
-    border-color: #ccc; 
+    background-color: #d6d6d6;
+    border-color: #ccc;
     color: #888;
-    cursor: not-allowed; 
+    cursor: not-allowed;
 }
 
 .disabled-btn:focus,
 .disabled-btn:hover {
-    background-color: #d6d6d6; 
-    border-color: #ccc; 
-    color: #888; 
-    box-shadow: none; 
-    text-decoration: none; 
+    background-color: #d6d6d6;
+    border-color: #ccc;
+    color: #888;
+    box-shadow: none;
+    text-decoration: none;
 }
 
-/* Responsive design */
+
 @media (max-width: 768px) {
-    .row-cols-md-4 {
-        grid-template-columns: repeat(2, 1fr);
+    .card {
+        max-width: 150px; 
+        padding: 8px;
     }
+
+    .card-img-top {
+        max-height: 80px; 
+    }
+
+    .card-title {
+        font-size: 0.9rem;
+    }
+
+    .card-text {
+        font-size: 0.7rem;
+        text-align: center;
+    }
+
+    .btn {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+    }
+
+    
 }
 
-@media (max-width: 576px) {
-    .row-cols-2 {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}

@@ -10,7 +10,7 @@ function Home() {
                 <div>
                     <h1 className="section-title">Featured Events</h1>
                     <div className="event-container">
-                        <Event /> 
+                    <Event cardClass="home-event-card" /> 
                     </div>
                 </div>
 
