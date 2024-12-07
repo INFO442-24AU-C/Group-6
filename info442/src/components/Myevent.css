@@ -18,6 +18,8 @@ aside {
     margin-right: 20px; 
 }
 
+
+
 main {
     flex: 3;
     padding: 20px; 
@@ -56,31 +58,44 @@ main {
     margin-top: 20px;
 }
 
-/* Media query for small screens */
 @media screen and (max-width: 768px) {
     .app-container {
         flex-direction: column;
     }
 
     aside {
-        position: absolute; 
+        width: 90%;
         top: 10px;
         left: 50%;
         transform: translateX(-50%);
-        z-index: 2;
-        width: 90%; 
-        background-color: rgba(255, 255, 255, 0.9); 
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+        z-index: 2000; 
     }
 
     main {
         margin-top: 140px;
-        z-index: 1; 
+        z-index: 1;
     }
 
     .welcome-container {
-        padding: 20px;
+        padding: 10px;
         text-align: center;
     }
+
+    .welcome-message {
+        font-size: 40px;  
+    }
+
+    .events-container {
+        gap: 10px; 
+    }
+
+    .event-card {
+        width: calc(50% - 10px); 
+    }
+
+    .event-card img {
+        height: 120px; 
+    }
 }
+
 

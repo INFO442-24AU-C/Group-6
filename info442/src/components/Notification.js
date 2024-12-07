@@ -11,6 +11,8 @@ function Notification({ eventIds }) {
         }
     }, [eventIds]);
 
+    
+
     const fetchNotifications = async (eventIds) => {
         let allNotifications = [];
         for (const eventId of eventIds) {
@@ -38,8 +40,10 @@ function Notification({ eventIds }) {
         return userSnap.exists() ? userSnap.data().name : "Unknown User"; 
     };
 
+
+
     return (
-        <div>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <h2>Notifications</h2>
             {notifications.length > 0 ? (
                 notifications.map((note, index) => 
