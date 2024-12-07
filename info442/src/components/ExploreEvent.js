@@ -47,11 +47,18 @@ function ExploreEvent() {
         fetchEvents(category);
     }
 
-    function handleRSVP(eventId, eventName) {
+    async function handleRSVP(eventId, eventName) {
         if (!auth.currentUser) {
             alert("Please log in to RSVP");
             return;
         }
+
+        // Check if user has already RSVP'd for this event
+        if (rsvpedEventIds.has(eventId)) {
+            alert(`You have already RSVP'd for the event: ${eventName}`);
+            return;
+        }
+
         const rsvpRef = doc(database, "RSVP", `${auth.currentUser.uid}_${eventId}`);
         setDoc(rsvpRef, {
             userId: auth.currentUser.uid,
@@ -59,8 +66,8 @@ function ExploreEvent() {
             eventName: eventName,
         }, { merge: true })
         .then(() => {
+            setRsvpedEventIds((prev) => new Set(prev).add(eventId)); // Add eventId to the set
             alert("RSVP successful!");
-            setRsvpedEventIds((prev) => new Set(prev).add(eventId));
             navigate('/Myevent');
         })
         .catch((error) => {
@@ -121,7 +128,11 @@ function ExploreEvent() {
                                 <p className="card-text mb-3">{new Date(event.dates.start.localDate).toLocaleDateString()}</p>
                                 <div className="button-container mt-auto">
                                     <a href={event.url} target="_blank" rel="noopener noreferrer" className="btn btn-success">Get Tickets</a>
-                                    <button onClick={() => handleRSVP(event.id, event.name)} className="btn btn-primary">RSVP</button>
+                                    <button 
+                                        onClick={() => handleRSVP(event.id, event.name)}                                         className={`btn btn-primary ${!auth.currentUser ? 'disabled-btn' : ''}`}
+                                    >
+                                        RSVP
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -133,3 +144,5 @@ function ExploreEvent() {
 }
 
 export default ExploreEvent;
+
+
